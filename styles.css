@@ -1,0 +1,591 @@
+/* Reset and box-sizing for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Setting height and width for html */
+html {
+  height: 100%;
+  width: 100%;
+}
+
+/* Basic styles for the body */
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+}
+
+/* Container styling */
+.container {
+  height: 70%;
+  width: 30%;
+  padding: 2% 3%;
+  background: white;
+  border-radius: 3%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+}
+
+/* Header styling */
+.head {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #262626;
+  opacity: 0.9;
+  margin-bottom: 2%;
+}
+
+/* Input row styling */
+.input-row {
+  height: 8%;
+  width: 100%;
+  background-color: #edeef0;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%;
+  border-radius: 30px;
+}
+
+.input-row input[type="text"] {
+  flex: 1;
+  padding: 4%;
+  margin-right: 2%;
+  font-size: large;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/* Add button styling */
+.add {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  padding: 18%;
+  background-color: rgb(0, 153, 255);
+  border-radius: 50%;
+}
+
+/* Status row styling */
+.status-row {
+  height: 8%;
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2%;
+  position: relative;
+}
+
+.status-row button {
+  height: 100%;
+  padding: 0% 4%;
+  font-size: medium;
+  background: none;
+  color: #919191;
+  opacity: 0.8;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.status-row .status-btn.active {
+  color: rgb(0, 153, 255);
+}
+
+/* Line styling for status row */
+.line {
+  position: absolute;
+  top: calc(100% - 5px);
+  border-radius: 10px;
+  background-color: #0099ff;
+  transition: all 0.3s ease-in-out;
+  height: 3px;
+  left: 0;
+}
+
+/* Task wrap styling */
+.task-wrap {
+  height: 54%;
+  width: 100%;
+  margin: 2% 0;
+  overflow: auto;
+}
+
+/* Empty state styling */
+.empty {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Default image styling */
+.default {
+  height: 100%;
+  width: 75%;
+  mix-blend-mode: multiply;
+}
+
+/* Task list styling */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  margin-inline-end: 2%;
+}
+
+.task-list li {
+  width: 100%;
+  padding: 2% 4%;
+  background-color: #edeef0;
+  border-radius: 20px;
+  margin-bottom: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-list .task-name {
+  display: inline-block;
+  width: 60%;
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar{
+  background: transparent;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track{
+  background: whitesmoke;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #0099ff;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #0099ff;
+  border-radius: 20px;
+}
+
+/* Edit input styling */
+.edit-input {
+  font-size: medium;
+  width: 60%;
+  border: none;
+  outline: none;
+  height: 100%;
+  background: transparent;
+}
+
+.completed {
+  color: #919191;
+}
+
+/* Button styling for edit, save, remove, and checkbox */
+.edit,
+.save,
+.rem,
+.checkbox-icon {
+  cursor: pointer;
+  height: 100%;
+  width: 6%;
+}
+
+/* Blur effect for task items */
+.task-blur {
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+/* Footer styling */
+.foot {
+  height: 10%;
+  width: 100%;
+  padding: 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #919191;
+}
+
+.task-counter {
+  font-size: large;
+  width: 75%;
+}
+
+.clr {
+  width: 25%;
+  margin-top: 1%;
+}
+
+.clr button {
+  width: 100%;
+  color: white;
+  background: rgb(0, 153, 255);
+  padding: 10% 0%;
+  font-size: medium;
+  outline: none;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+/* Alert box styling */
+.alert {
+  position: fixed;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+  border-radius: 24px;
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.alert.green {
+  border-color: green;
+  color: green;
+}
+
+.alert.red {
+  border-color: red;
+  color: red;
+}
+
+/* Media Queries */
+
+@media (min-width: 1492px) {
+  .status-row {
+    margin-bottom: 0;
+    padding: 0 4%;
+  }
+
+  .task-wrap {
+    height: 54%;
+    padding-top: 0%;
+  }
+
+  .task-list li {
+    padding: 4% 6%;
+  }
+
+  .foot {
+    padding: 0 2%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .head {
+    font-size: 16px;
+  }
+
+  .input-row {
+    width: 96%;
+    margin-left: 2%;
+  }
+  .input-row input[type="text"] {
+    font-size: 16px;
+  }
+
+  .status-row {
+    padding: 0 3% 0 3%;
+    height: 8%;
+  }
+
+  .status-row button {
+    font-size: 16px;
+    padding-bottom: 0;
+  }
+
+  .task-wrap {
+    padding: 0 2% 2% 2%;
+    margin-bottom: 0;
+    height: 55%;
+  }
+
+  .default {
+    height: 95%;
+  }
+  .task-list li {
+    font-size: 16px;
+    padding: 4% 6%;
+  }
+
+  .foot {
+    height: 10%;
+  }
+  .task-counter {
+    font-size: 15px;
+  }
+
+  .del button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 40%;
+  }
+  .head {
+    font-size: 17px;
+    padding-top: 2%;
+  }
+
+  .input-row {
+    width: 96%;
+    margin-left: 2%;
+  }
+  .input-row input[type="text"] {
+    font-size: 16px;
+  }
+
+  .alert {
+    top: 5%;
+    padding: 1% 2%;
+  }
+
+  .status-row {
+    padding: 0 3% 0 3%;
+    height: 7%;
+  }
+
+  .status-row button {
+    font-size: 16px;
+    padding-bottom: 0;
+  }
+
+  .task-wrap {
+    padding: 2%;
+    margin-bottom: 0;
+    height: 56%;
+  }
+
+  .task-list li {
+    font-size: 16px;
+    padding: 4% 6%;
+  }
+
+  .foot {
+    height: 10%;
+  }
+  .task-counter {
+    font-size: 15px;
+  }
+
+  .del button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 52%;
+  }
+  .head {
+    font-size: 17px;
+    padding-top: 2%;
+  }
+
+  .input-row {
+    width: 96%;
+    margin-left: 2%;
+  }
+  .input-row input[type="text"] {
+    font-size: 16px;
+  }
+
+  .alert {
+    top: 4%;
+    padding: 2%;
+  }
+
+  .status-row {
+    padding: 0 3% 0 3%;
+    height: 7%;
+  }
+
+  .status-row button {
+    font-size: 16px;
+    padding-bottom: 0;
+  }
+
+  .task-wrap {
+    padding: 2%;
+    margin-bottom: 0;
+    height: 56%;
+  }
+
+  .task-list li {
+    font-size: 16px;
+    padding: 4% 6%;
+  }
+
+  .foot {
+    height: 10%;
+  }
+  .task-counter {
+    font-size: 15px;
+  }
+
+  .del button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    width: 70%;
+    height: 50%;
+    padding: 4%;
+  }
+  .head {
+    font-size: 14px;
+    padding-top: 2%;
+  }
+
+  .input-row {
+    width: 96%;
+    margin-left: 2%;
+  }
+  .input-row input[type="text"] {
+    font-size: 14px;
+  }
+
+  .alert {
+    top: 15%;
+    padding: 3%;
+    font-size: 12px;
+  }
+
+  .status-row {
+    padding: 0 3% 0 3%;
+    height: 7%;
+  }
+
+  .status-row button {
+    font-size: 14px;
+    padding-bottom: 3%;
+  }
+
+  .task-wrap {
+    padding: 2%;
+    margin-bottom: 0;
+  }
+
+  .task-list li {
+    font-size: 14px;
+    padding: 4% 6%;
+  }
+
+  .foot {
+    height: 10%;
+  }
+  .task-counter {
+    font-size: 13px;
+  }
+
+  .del button {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 80%;
+    height: 50%;
+  }
+  .alert {
+    font-size: 11px;
+    padding: 2%;
+    top: 17%;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    width: 85%;
+    height: 50%;
+  }
+  .head {
+    font-size: 12px;
+    padding-top: 2%;
+  }
+
+  .input-row {
+    width: 96%;
+    margin-left: 2%;
+  }
+  .input-row input[type="text"] {
+    font-size: 12px;
+  }
+
+  .alert {
+    font-size: 9px;
+    padding: 3%;
+  }
+
+  .status-row {
+    padding: 0 3% 0 3%;
+    height: 7%;
+  }
+
+  .status-row button {
+    font-size: 12px;
+    padding-bottom: 3%;
+  }
+
+  .task-wrap {
+    padding: 2%;
+    margin-bottom: 0;
+    height: 53%;
+  }
+
+  .task-list li {
+    font-size: 12px;
+    padding: 4% 6%;
+  }
+
+  .foot {
+    height: 10%;
+  }
+  .task-counter {
+    font-size: 11px;
+  }
+
+  .del button {
+    font-size: 11px;
+  }
+}
